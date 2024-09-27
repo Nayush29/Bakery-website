@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+}
+
+body {
+    margin: 0;
+}
+
+:root {
+    --herder-colour: #e27195d5;
+    --footer-colour: #303339;
+}
+
+header {
+    background-color: var(--herder-colour);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    border-bottom: #333 solid 1.5px;
+}
+
+.contact-menu,
+.social-menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-menu a,
+.social-menu a {
+    text-decoration: none;
+    color: #000000;
+    font-size: larger;
+}
+
+@media (max-width: 600px) {
+    header {
+        display: none;
+    }
+
+    .contact-menu,
+    .social-menu {
+        display: none;
+    }
+
+    .contact-menu a,
+    .social-menu a {
+        display: none;
+    }
+}
+
+nav {
+    background-color: var(--herder-colour);
+    border-bottom: #333 solid 1.5px;
+}
+
+.menu-desktop {
+    list-style-type: none;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+}
+
+.menu-desktop a {
+    text-decoration: none;
+    color: #000;
+    font-size: x-large;
+}
+
+.menu-mobile {
+    list-style-type: none;
+    margin: 0px 10px 0 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-menu {
+    cursor: pointer;
+    position: relative;
+}
+
+.bar {
+    height: 4px;
+    width: 30px;
+    margin: 6px 0;
+    background-color: #000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-options {
+    display: none;
+    position: absolute;
+    top: 120px;
+    right: 2%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 500;
+}
+
+.menu-options a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-options a:hover {
+    background-color: #f0f0f0;
+}
+
+.menu-options.show {
+    display: block;
+}
+
+.icon-menu.active .bar--1 {
+    transform: translateY(10px) rotate(45deg);
+    width: 30px;
+}
+
+.icon-menu.active .bar--2 {
+    opacity: 0;
+}
+
+.icon-menu.active .bar--3 {
+    transform: translateY(-10px) rotate(-45deg);
+    width: 30px;
+}
+
+.menu-mobile ul {
+    list-style-type: none;
+}
+
+.logo {
+    margin-top: 5px;
+}
+
+.logo img {
+    max-height: 100px;
+    max-width: 250px;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .menu-desktop {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: flex;
+    }
+}
+
+@media (min-width: 450px) {
+    .menu-mobile {
+        display: none;
+    }
+
+    .menu-desktop {
+        display: flex;
+    }
+}
+
+main {
+    padding: 10px;
+    background-color: #f5b0c6e3;
+}
+
+.our-cakes,
+.our-menu,
+.order-enquiry,
+.about-us {
+    padding: 20px;
+    background-color: #ffe8f6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.our-cakes h2,
+.our-menu h2,
+.order-enquiry h2,
+.about-us h2 {
+    margin: 0;
+    text-align: center;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.our-cakes h2::before,
+.our-menu h2::before,
+.order-enquiry h2::before,
+.about-us h2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100px;
+    height: 1px;
+    background-color: #ACB2B4;
+}
+
+.about-us-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.about-us-text p {
+    line-height: 1.6;  /* Increase line-height for readability */
+    text-align: justify;
+    color: var(--grey-dark);  /* Ensure text color is consistent */
+}
+
+.about-us-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.about-us-image img:hover {
+    transform: scale(1.05);  /* Slight zoom on hover for interactivity */
+}
+
+@media (min-width: 769px) {
+    .about-us-content {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .about-us-text {
+        max-width: 600px;
+    }
+
+    .about-us-image img {
+        max-height: 400px;  /* Increase max-height for better visual balance */
+    }
+}
+
+.our-menu-content-mobile {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.our-menu-content-desktop {
+    display: none;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.our-menu-left,
+.our-menu-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+.our-menu-left {
+    margin: 10px;
+}
+
+.cakes,
+.dessert-menu,
+.jar-Cakes,
+.brownie,
+.cheese-cake {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.menu-heading {
+    font-family: "Qwitcher Grypen", cursive;
+    font-size: 50px;
+    display: flex;
+    justify-content: space-between;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.menu-heading .left {
+    text-align: left;
+}
+
+.menu-heading .right {
+    text-align: right;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cake-name {
+    font-size: large;
+    color: #333;
+}
+
+.cake-price {
+    font-size: medium;
+    font-weight: bold;
+    color: #333;
+}
+
+.our-menu-left,
+.our-menu-right {
+    box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+    .our-menu-content-mobile {
+        display: none;
+    }
+
+    .our-menu-content-desktop {
+        display: flex;
+    }
+}
+
+.cake-description {
+    text-align: center;
+}
+
+.cake-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cake-gallery {
+    display: flex;
+    justify-content: space-evenly;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.cake-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    width: 305px;
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 450px) {
+    .card {
+        width: 325px;
+    }
+}
+
+.card-logo {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.left-btn {
+    left: 1px;
+}
+
+.right-btn {
+    right: 1px;
+}
+
+form {
+    margin-top: 16px;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    gap: 10px;
+}
+
+.order-enquiry input[type="text"],
+.order-enquiry input[type="tel"],
+select[name="product-category"],
+.order-enquiry textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: medium;
+}
+
+.order-enquiry textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.order-enquiry input[type="submit"] {
+    margin: auto;
+    width: 50%;
+    padding: 12px;
+    background-color: #94C9D9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: large;
+    transition: background-color 0.3s;
+}
+
+.order-enquiry input[type="submit"]:hover {
+    background-color: #F195B2;
+}
+
+footer {
+    background-color: var(--footer-colour);
+    padding: 5px 5px 0;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.image img {
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info-section h2 {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    font-size: medium;
+    text-align: center;
+}
+
+.info-section ul {
+    color: #797979;
+    margin: 5px 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+
+.info-section p {
+    color: #797979;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.copyright p {
+    margin: 0;
+    text-align: center;
+    border-top: 1px solid #797979;
+    color: #797979;
+    padding: 10px;
+    font-size: medium;
+}
+
+@media (min-width: 768px) {
+    .info-section {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
